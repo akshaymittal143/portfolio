@@ -6,7 +6,46 @@
 }
 
 
-.about-text img { /* Or a more specific class */
+.about-text img {
+  /* Or a more specific class */
   width: 160px;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
+  /* Maintain aspect ratio */
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+}
+
+.profile-photo { width: 100%; border-radius: 10px; }
