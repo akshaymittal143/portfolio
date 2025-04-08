@@ -4,3 +4,9 @@
 .about-me p {
   font-family: 'Merriweather', serif;
 }
+
+
+.about-text img { /* Or a more specific class */
+  width: 160px;
+  height: auto; /* Maintain aspect ratio */
+}
