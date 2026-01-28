@@ -85,7 +85,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all cards and sections
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.award-card, .publication-card, .book-card, .speaking-card, .work-card, .skill-category, .service-category, .repo-card');
+    const cards = document.querySelectorAll('.award-card, .publication-card, .book-card, .speaking-card, .work-card, .skill-category, .service-category, .repo-card, .experience-card, .project-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';

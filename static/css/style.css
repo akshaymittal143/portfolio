@@ -89,6 +89,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .nav-logo {
@@ -96,22 +97,54 @@ body {
     font-weight: 700;
     color: var(--text-dark);
     text-decoration: none;
+    flex: 0 0 auto;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.25rem;
     align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px; /* prevents underline clipping on some browsers */
+    flex: 1 1 auto;
+    min-width: 0; /* allow flex item to shrink so overflow works */
+    justify-content: flex-end;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     transition: var(--transition);
     position: relative;
+    white-space: nowrap;
+}
+
+/* Hide horizontal scrollbar but keep scroll */
+.nav-menu::-webkit-scrollbar {
+    height: 0;
+}
+.nav-menu {
+    scrollbar-width: none;
+}
+
+/* Slightly tighter nav on mid-width screens to avoid clipping */
+@media (max-width: 1100px) {
+    .nav-container {
+        padding: 0.85rem 1rem;
+    }
+
+    .nav-menu {
+        gap: 0.9rem;
+    }
+
+    .nav-link {
+        font-size: 0.82rem;
+    }
 }
 
 .nav-link:hover {
@@ -635,6 +668,15 @@ body {
     margin-bottom: 1rem;
 }
 
+.book-full-title {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: -0.25rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
 /* Service Grid */
 .service-stats {
     display: grid;
@@ -756,6 +798,148 @@ body {
     margin-top: 3rem;
 }
 
+/* Experience */
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Balanced 2x2 layout on desktop */
+@media (min-width: 900px) {
+    .experience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.experience-card {
+    background: var(--bg-white);
+    padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.experience-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-company {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.experience-dates {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+.experience-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.35;
+}
+
+.experience-bullets {
+    margin: 0 0 1rem 1rem;
+    color: var(--text-light);
+}
+
+.experience-bullets li {
+    margin-bottom: 0.5rem;
+}
+
+.experience-tags {
+    margin-top: 0.25rem;
+}
+
+/* Projects / Case Studies */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: var(--bg-white);
+    padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.project-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+}
+
+.project-problem,
+.project-approach,
+.project-outcome {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 0.6rem;
+}
+
+.project-tags {
+    margin-top: 0.75rem;
+}
+
 /* Open Source Repos */
 .repo-section {
     margin-top: 2.5rem;
@@ -822,6 +1006,118 @@ body {
 
 .repo-tags {
     margin-top: 0.25rem;
+}
+
+/* Videos Page */
+.video-page .section-title {
+    margin-top: 1rem;
+}
+
+.video-section {
+    margin-top: 3rem;
+}
+
+.video-section-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.video-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+}
+
+.video-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.video-meta {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.video-chip {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(79, 70, 229, 0.10);
+    color: rgba(11, 18, 32, 0.92);
+    white-space: nowrap;
+}
+
+.video-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0.5rem 0 0.75rem 0;
+    line-height: 1.35;
+}
+
+.video-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.video-links {
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}
+
+.video-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.video-link:hover {
+    text-decoration: underline;
+}
+
+.video-footer-note {
+    margin-top: 2.5rem;
+}
+
+.video-quotes {
+    margin-top: 1rem;
+}
+
+.video-quote {
+    margin: 0.75rem 0 0 0;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid rgba(79, 70, 229, 0.55);
+    background: rgba(79, 70, 229, 0.06);
+    border-radius: 10px;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.video-quote + .video-quote {
+    margin-top: 0.6rem;
 }
 
 .work-card {
@@ -914,6 +1210,19 @@ body {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
+}
+
+.contact-inline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.contact-sep {
+    color: var(--text-light);
+    opacity: 0.8;
 }
 
 .contact-link {
@@ -1093,7 +1402,10 @@ body {
     .books-grid,
     .speaking-grid,
     .work-grid,
-    .repo-grid {
+    .repo-grid,
+    .experience-grid,
+    .project-grid,
+    .video-grid {
         grid-template-columns: 1fr;
     }
 
