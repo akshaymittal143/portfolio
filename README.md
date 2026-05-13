@@ -6,7 +6,7 @@ A modern, responsive portfolio website showcasing achievements in AI-Augmented D
 
 ## Features
 
-* **Hero Section**: Key metrics and achievements (50M+ transactions secured, 30+ publications, 119+ peer reviews, $2M+ cost savings)
+* **Hero Section**: Key metrics and achievements (50M+ transactions secured, 30+ publications, 100+ peer reviews, $2M+ cost savings)
 * **About**: Comprehensive professional background and expertise
 * **Awards & Recognition**: IEEE Best Paper Awards, PayPal Innovation Award, IEEE Senior Member status
 * **Technical Expertise**: AI & Cybersecurity, DevSecOps, Cloud Infrastructure, Programming & Tools
